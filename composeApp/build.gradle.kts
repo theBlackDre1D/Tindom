@@ -33,6 +33,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
 
+            // Koin
             implementation(libs.koin.android)
         }
         commonMain.dependencies {
@@ -45,10 +46,15 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
+
+            // Koin
             implementation(libs.koin.core)
+
+            implementation(libs.navigation.compose)
         }
 
         iosMain.dependencies {
+            // Koin
             implementation(libs.koin.core)
         }
     }
