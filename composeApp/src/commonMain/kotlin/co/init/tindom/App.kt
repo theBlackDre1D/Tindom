@@ -36,7 +36,7 @@ fun App() {
             topBar = {
                 TopAppBar(
                     backgroundColor = primaryColor,
-                    title = { Text(text = Strings.app_name) }
+                    title = { Text(text = Strings.get("app_name")) }
                 )
             },
             bottomBar = {
