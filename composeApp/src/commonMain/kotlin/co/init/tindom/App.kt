@@ -27,7 +27,6 @@ fun App() {
             topBar = { TindomAppBar() },
             bottomBar = { TindomBottomBar(navController) }
         ) {
-//            val navController = rememberNavController()
 
             NavHost(navController = navController, startDestination = HomeNavigationScreen.Home.route) {
                 composable(HomeNavigationScreen.Home.route) { HomeScreen(navController) }

@@ -2,11 +2,14 @@ package co.init.tindom.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import org.jetbrains.compose.resources.DrawableResource
@@ -36,35 +39,26 @@ fun TindomBottomBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
+    val bottomNavigationScreens = listOf(
+        HomeNavigationScreen.Home,
+        HomeNavigationScreen.Profile,
+        HomeNavigationScreen.Settings
+    )
     BottomNavigation {
         Row {
-            // Home
-            BottomNavigationItem(
-                icon = { Image(painterResource(Res.drawable.ic_home), null) },
-                label = { Text(stringResource(Res.string.bottom_navigation_home)) },
-                selected = currentRoute == HomeNavigationScreen.Home.route,
-                onClick = {
-                    navController.navigate(HomeNavigationScreen.Home.route)
-                }
-            )
-
-            BottomNavigationItem(
-                icon = { Image(painterResource(Res.drawable.ic_profile), null) },
-                label = { Text(stringResource(Res.string.bottom_navigation_profile)) },
-                selected = currentRoute == HomeNavigationScreen.Profile.route,
-                onClick = {
-                    navController.navigate(HomeNavigationScreen.Profile.route)
-                }
-            )
-
-            BottomNavigationItem(
-                icon = { Image(painterResource(Res.drawable.ic_settings), null) },
-                label = { Text(stringResource(Res.string.bottom_navigation_settings)) },
-                selected = currentRoute == HomeNavigationScreen.Settings.route,
-                onClick = {
-                    navController.navigate(HomeNavigationScreen.Settings.route)
-                }
-            )
+            bottomNavigationScreens.forEach { screen ->
+                BottomNavigationItem(
+                    modifier = Modifier.padding(bottom = 8.dp),
+                    icon = { Image(painterResource(screen.icon), null) },
+                    label = { Text(stringResource(screen.label)) },
+                    selected = currentRoute == screen.route,
+                    onClick = {
+                        if (screen.route != currentRoute) {
+                            navController.navigate(screen.route)
+                        }
+                    }
+                )
+            }
         }
     }
 }
