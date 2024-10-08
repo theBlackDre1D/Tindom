@@ -1,0 +1,72 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "7b79493a8b7fc1f2fff3c51cd12ba02458e8d963a07eeba4ac05a175c12568b7"
+    }
+  ],
+  "containerPath" : "/Users/seremtinameno/StudioProjects/Tindom/iosApp/iosApp.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator18.0",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData/iosApp-hkvxvwffcjfpldbqcwjgayffzycy/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData/iosApp-hkvxvwffcjfpldbqcwjgayffzycy/Build/Products",
+      "derivedDataPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData/iosApp-hkvxvwffcjfpldbqcwjgayffzycy/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData/iosApp-hkvxvwffcjfpldbqcwjgayffzycy/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/seremtinameno/Library/Developer/Xcode/DerivedData/iosApp-hkvxvwffcjfpldbqcwjgayffzycy/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "OBJROOT" : "/Users/seremtinameno/StudioProjects/Tindom/build/ios",
+          "SYMROOT" : "/Users/seremtinameno/StudioProjects/Tindom/build/ios"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone17,1",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "18.0",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone17,1",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES",
+          "TARGET_DEVICE_IDENTIFIER" : "FDFC1952-6295-4523-9FBC-B769BA2901DE",
+          "TARGET_DEVICE_MODEL" : "iPhone17,1",
+          "TARGET_DEVICE_OS_VERSION" : "18.0",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
