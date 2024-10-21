@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -44,7 +45,10 @@ fun TindomBottomBar(navController: NavHostController) {
         HomeNavigationScreen.Profile,
         HomeNavigationScreen.Settings
     )
-    BottomNavigation {
+    BottomNavigation(
+        backgroundColor = Color.White,
+        elevation = 8.dp
+    ) {
         Row {
             bottomNavigationScreens.forEach { screen ->
                 BottomNavigationItem(
