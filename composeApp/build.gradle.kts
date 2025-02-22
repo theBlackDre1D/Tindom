@@ -1,11 +1,12 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsCompose)
-    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
@@ -32,9 +33,6 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-
-            // Koin
-            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,31 +43,16 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-
-
-            // Koin
-            implementation(libs.koin.core)
-
-            implementation(libs.navigation.compose)
-        }
-
-        iosMain.dependencies {
-            // Koin
-            implementation(libs.koin.core)
         }
     }
 }
 
 android {
-    namespace = "co.init.tindom"
+    namespace = "co.init.studio"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    sourceSets["main"].res.srcDirs("src/androidMain/res")
-    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
-
     defaultConfig {
-        applicationId = "co.init.tindom"
+        applicationId = "co.init.studio"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
@@ -89,11 +72,24 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildFeatures {
-        compose = true
-    }
-    dependencies {
-        debugImplementation(compose.uiTooling)
-    }
+}
+
+dependencies {
+    debugImplementation(compose.uiTooling)
+
+    // Navigator
+    implementation(libs.voyager.navigator)
+
+    // BottomSheetNavigator
+    implementation(libs.voyager.bottom.sheet.navigator)
+
+    // TabNavigator
+    implementation(libs.voyager.tab.navigator)
+
+    // Transitions
+    implementation(libs.voyager.transitions)
+
+    // Koin integration
+    implementation(libs.voyager.koin)
 }
 

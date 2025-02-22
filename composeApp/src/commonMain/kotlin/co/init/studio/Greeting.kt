@@ -1,4 +1,4 @@
-package co.init.tindom
+package co.init.studio
 
 class Greeting {
     private val platform = getPlatform()

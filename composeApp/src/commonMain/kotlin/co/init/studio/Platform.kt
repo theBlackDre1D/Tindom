@@ -1,4 +1,4 @@
-package co.init.tindom
+package co.init.studio
 
 interface Platform {
     val name: String
